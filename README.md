@@ -23,7 +23,7 @@
 
 [Vinitha Kumar](https://github.com/selvivini)
 
-[Carly Gouge]()
+[Carly Gouge](https://github.com/cgouge93)
 
 [Justin Yates](https://github.com/justinyates887)
 

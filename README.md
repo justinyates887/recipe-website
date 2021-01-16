@@ -1,5 +1,6 @@
 ## Recipe Finder
 
+>
 **IDEA:** Recipe generator based on available ingredients
 
 **WHEN:** I am a hungry person wanting a meal
@@ -11,3 +12,4 @@
 **AND:** See what those recipes look like
 
 **SO THAT:** I can make a meal with the instructions provided based on the ingredients I have
+>

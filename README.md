@@ -21,7 +21,7 @@
 
 ### Developers:
 
-[Vinitha Kumar]()
+[Vinitha Kumar](https://github.com/selvivini)
 
 [Carly Gouge]()
 

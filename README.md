@@ -1,5 +1,10 @@
 ## Recipe Finder
 
+![lang](https://img.shields.io/github/languages/count/justinyates887/recipe-website?logoColor=yellow)
+![lines](https://img.shields.io/tokei/lines/github/justinyates887/recipe-website)
+![open](https://img.shields.io/github/issues-raw/justinyates887/recipe-website)
+![closed](https://img.shields.io/github/issues-closed-raw/justinyates887/recipe-website)
+
 **IDEA:** Recipe generator based on available ingredients
 
 **WHEN:** I am a hungry person wanting a meal

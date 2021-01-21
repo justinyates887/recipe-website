@@ -1,12 +1,100 @@
+
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Finder</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper teal lighten-1">
+      <span id="header" class="brand-logo center">Recipe Builder</span>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+    </div>
+  </nav>
+  
+  
 
-    </head>
-    <body>
 
-    </body>
-    <footer>
-        
-    </footer>
-</html>
+<div id="main-content">
+  <div class="row">
+      <div class="col m6 l4 s12">
+        <div class="card" id="#saved-recipes">
+          <div class="card-content" >
+            <span class="card-title">Saved Recipes</span>
+            <ul class="collection">
+              <!-- saved recipes will be appended here as <li class="collection-item"> -->
+            </ul>
+                    
+          </div>
+        </div>
+      </div>
+    <div class="col m6 l6 s12">
+      <div class="card"  id="recipe-search">
+        <div class="card-content">
+          <span class="card-title">Search for a recipe</span>
+          <p>Tell us what you have in your pantry and we'll find a recipe containing your ingredients.</p>
+          <div class="chips chips-placeholder"></div>
+          <button class="waves-effect waves-light btn teal lighten-1" id="search">Find a recipe
+            <i class="material-icons right">local_dining</i>
+          </button>
+          <div class="card-content" id="recipe-results">
+
+            <!-- Image Carousel Placeholder. May move this later. -->
+            <div class="carousel carousel-slider center">
+              <div class="carousel-item red white-text" href="#one!">
+                <h2>First Panel</h2>
+                <p class="white-text">This is your first panel</p>
+              </div>
+              <div class="carousel-item amber white-text" href="#two!">
+                <h2>Second Panel</h2>
+                <p class="white-text">This is your second panel</p>
+              </div>
+              <div class="carousel-item green white-text" href="#three!">
+                <h2>Third Panel</h2>
+                <p class="white-text">This is your third panel</p>
+              </div>
+              <div class="carousel-item blue white-text" href="#four!">
+                <h2>Fourth Panel</h2>
+                <p class="white-text">This is your fourth panel</p>
+              </div>
+            </div>
+                  
+            <!-- Recipes will be appended here as <a> elements -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col 12">
+      <div class="carousel">
+        <a class="carousel-item" href="#one!"><img src="https://www.fillmurray.com/640/360"></a>
+        <a class="carousel-item" href="#two!"><img src="https://www.fillmurray.com/640/360"></a>
+        <a class="carousel-item" href="#three!"><img src="https://www.fillmurray.com/640/360"></a>
+        <a class="carousel-item" href="#four!"><img src="https://www.fillmurray.com/640/360"></a>
+        <a class="carousel-item" href="#five!"><img src="https://www.fillmurray.com/640/360"></a>  
+      </div>
+          
+    </div>
+  </div>
+
+
+
+
+
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/scripts.js"></script>
+  </body>
+  <footer>
+
+  </footer>
+  </html>

@@ -20,12 +20,7 @@ $("#search").on("click", function(event) {
   var instance = M.Chips.getInstance($(".chips"));
   var ingredientEntered = instance.chipsData;
   
-  // Alerts user if too many ingredients are entered. Edamam API only allows up to 5 ingredients. Any suggestions on a better way to do this are welcome!
-  if (ingredientEntered.length <= 4) {
-    console.log(ingredientEntered)
-  } else {
-    alert("Maximum 5 ingredients")
-  }
+
 
 });
 

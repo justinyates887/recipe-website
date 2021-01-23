@@ -3,9 +3,6 @@
     margin:auto;
 }
 
-
-
-
 body{
     background:rgb(192, 192, 192);
 }
@@ -18,9 +15,6 @@ body{
     font-size:3rem;
     
 }
-
-
-
 @media (min-width: 768px) {
     #recipe-search{
         margin-left:10%

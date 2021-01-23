@@ -38,16 +38,18 @@
         <div class="card-content">
           <span class="card-title">Search for a recipe</span>
           <p>Tell us what you have in your pantry and we'll find a recipe containing your ingredients. Enter your ingredients (press enter after each ingredient to add it to your list) , click Find A Recipe, and then click on a result to expand!</p>
-          <div class="chips chips-placeholder"></div>
+          <div class="chips chips-placeholder" id= "ing-input"></div>
           <button class="waves-effect waves-light btn teal lighten-1" id="search">Find a recipe
             
           </button>
           
-          <!-- On button press, create <div class="card-content" id="recipe-results">, <ul class="collapsible z-depth-3"> within newly created div, and <li> within UL. Each <li> will have 3 divs and 1 button. See example below for required classes and structure. -->
+          <!-- On button press, create <div class="card-content" id="recipe-results">, <ul class="collapsible z-depth-3"> within newly created div, and <li> within UL. Each <li> will have 3 divs, 2 buttons, and 1 modal. See example below for required classes and structure. -->
 
           <div class="card-content" id="recipe-results">
             <ul class="collapsible z-depth-3">
-              <li class="active" id="listOne">
+
+              <li>
+
                 <div class="collapsible-header"></i>Lemon-Parmesan Chicken and Rice Bowl</div> 
                 <div class="collapsible-body center-align">
                   <a href="https://www.edamam.com/recipe/lemon-parmesan-chicken-and-rice-bowl-cf6158596a766b6b5a1c2a170d345e1e/chicken-garlic-onion-lemon-pepper-cheese-rice/alcohol-free/591-722-cal">Click for Full Recipe</a>
@@ -65,6 +67,26 @@
                     <li>1/2 cup grated Parmesan cheese</li>
                   </ul>
                   <div id="img-div"><img class="responsive-img" src="https://www.edamam.com/web-img/6fa/6fa435f3c58de8418c22251efc509a6c.jpg"></div>
+
+                  
+                  <!-- Modal Trigger -->
+                  <a class="waves-effect waves-light btn modal-trigger" href="#nutrientModal">Nutrition Info</a>
+
+                  <!-- Modal Structure -->
+                  <div id="nutrientModal" class="modal">
+                    <div class="modal-content">
+                      <h4>Nutrition Information</h4>
+                      <ul>
+                        <li>Total Calories: 2499</li>
+                        <li>Fat: 174.35g</li>
+                        <li>Carbs: 3.26g</li>
+                        <li>Protein: 215.66g</li>
+                      </ul>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                  </div>
                   <button class="waves-effect waves-light btn teal lighten-1"> <i class="material-icons right">save</i>Save Recipe</button><br>
                 </div>
               </li>

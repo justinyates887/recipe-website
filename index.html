@@ -14,7 +14,7 @@
 <body>
   <nav>
     <div class="nav-wrapper teal lighten-1">
-      <span id="header" class="brand-logo center">Recipe Builder</span>
+      <span id="header" class="brand-logo center">Recipe Finder</span>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
     </div>
   </nav>
@@ -39,19 +39,19 @@
       <div class="card"  id="recipe-search">
         <div class="card-content">
           <span class="card-title">Search for a recipe</span>
-          <p>Tell us what you have in your pantry and we'll find a recipe containing your ingredients. Give us up to 5 ingredients, click Find A Recipe, and then click on a result to expand!</p>
+          <p>Tell us what you have in your pantry and we'll find a recipe containing your ingredients. Enter your ingredients (press enter after each ingredient to add it to your list) , click Find A Recipe, and then click on a result to expand!</p>
           <div class="chips chips-placeholder"></div>
           <button class="waves-effect waves-light btn teal lighten-1" id="search">Find a recipe
             
           </button>
+          
+          <!-- On button press, create <div class="card-content" id="recipe-results">, <ul class="collapsible z-depth-3"> within newly created div, and <li> within UL. Each <li> will have 3 divs and 1 button. See example below for required classes and structure. -->
+
           <div class="card-content" id="recipe-results">
-
-
             <ul class="collapsible z-depth-3">
               <li class="active">
                 <div class="collapsible-header"></i>Lemon-Parmesan Chicken and Rice Bowl</div> 
                 <div class="collapsible-body center-align">
-                  
                   <a href="https://www.edamam.com/recipe/lemon-parmesan-chicken-and-rice-bowl-cf6158596a766b6b5a1c2a170d345e1e/chicken-garlic-onion-lemon-pepper-cheese-rice/alcohol-free/591-722-cal">Click for Full Recipe</a>
                   <ul>
                     <li>1 cup rice</li>
@@ -85,28 +85,6 @@
                 </div>
               </li>
             </ul>
-
-            <!-- Image / Carousel Placeholder. Maybe 1 recipe per slide with appropriately corresponding image? -->
-            <!-- <div class="carousel carousel-slider center">
-              <div class="carousel-fixed-item center">
-                <a class="btn waves-effect white black-text darken-text-2" id="save-recipe">Save Recipe</a>
-              </div>
-              <div class="carousel-item deep-orange lighten-3 white-text" href="#one!">
-                <h2> <a href="#" class="white-text">Description of recipe as link</a> </h2>
-                <img src="https://picsum.photos/640/360?random=1" alt="">
-              </div>
-              <div class="carousel-item deep-orange lighten-3 white-text" href="#two!">
-                <h2> <a href="#" class="white-text">Link to Recipe here maybe?</a> </h2>
-                <img src="https://picsum.photos/640/360?random=2" alt="">
-              </div>
-              <div class="carousel-item deep-orange lighten-3 white-text" href="#three!">
-                <h2> <a href="#" class="white-text">Link to Recipe here maybe?</a> </h2>
-                <img src="https://picsum.photos/640/360?random=3" alt="">
-              </div>
-              <div class="carousel-item deep-orange lighten-3 white-text" href="#four!">
-                <h2> <a href="#" class="white-text">Link to Recipe here maybe?</a> </h2>
-                <img src="https://picsum.photos/640/360?random=4" alt="">
-              </div> -->
             </div>
           </div>
         </div>

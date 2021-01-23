@@ -19,7 +19,9 @@ body{
     
 }
 
-
+.btn {
+    margin-top:2%;
+}
 
 @media (min-width: 768px) {
     #recipe-search{

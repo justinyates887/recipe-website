@@ -44,11 +44,64 @@
           <button class="waves-effect waves-light btn teal lighten-1" id="search">Find a recipe
             
           </button>
+          <!-- nutrition info modal shows up when we press nutrition-info button -->
+          <div id="nutrition-info" class="modal">
+            <div class="modal-content">
+              <h4>Nutrition Value</h4>
+              <table class="centered striped">
+                <thead>
+                  <tr>
+                    <th>Nutrition</th>
+                    <th>Value(%)</th>
+                    </tr>
+                </thead>
+                <tr id= "calcium">
+                  <td>calcium</td>
+                  <td id= "calc-val"></td>
+                </tr>
+                <tr id= "carbs">
+                  <td>carbs</td>
+                  <td id= "carbs-val"></td>
+                </tr>
+                <tr id= "cholestrol">
+                  <td>cholestrol</td>
+                  <td id= "cholestrol-val"></td>
+                </tr>
+                <tr id= "fat">
+                  <td>fat</td>
+                  <td id= "fat-val"></td>
+                </tr>
+                <tr id= "potassium">
+                  <td>potassium</td>
+                  <td id= "potassium-val"></td>
+                </tr>
+                <tr id= "magnesium">
+                  <td >magnesium</td>
+                  <td id = "magnesium-val"></td>
+                </tr>
+                <tr id="sodium">
+                  <td>sodium</td>
+                  <td id= "sodium-val"></td>
+                </tr>
+                 <tr id="iron">
+                  <td>iron</td>
+                  <td id= "iron-val"></td>
+                </tr>
+                <tr id= "fiber">
+                  <td>fiber</td>
+                  <td id= "fiber-val"></td>
+                </tr>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
+            </div>
+          </div>
           
           <!-- On button press, create <div class="card-content" id="recipe-results">, <ul class="collapsible z-depth-3"> within newly created div, and <li> within UL. Each <li> will have 3 divs and 1 button. See example below for required classes and structure. -->
 
           <div class="card-content" id="recipe-results">
-            <!-- <ul class="collapsible z-depth-3">
+            <ul class="collapsible z-depth-3">
               <li class="active">
                 <div class="collapsible-header"></i>Lemon-Parmesan Chicken and Rice Bowl</div> 
                 <div class="collapsible-body center-align">
@@ -67,7 +120,61 @@
                     <li>1/2 cup grated Parmesan cheese</li>
                   </ul>
                   <div id="img-div"><img class="responsive-img" src="https://www.edamam.com/web-img/6fa/6fa435f3c58de8418c22251efc509a6c.jpg"></div>
-                  <button class="waves-effect waves-light btn teal lighten-1"> <i class="material-icons right">save</i>Save Recipe</button><br>
+                  <button class="waves-effect waves-light btn teal lighten-1"> <i class="material-icons right">save</i>Save Recipe</button>
+                  <!-- nutrition info -->
+                  <!-- <div id="nutrition-info" class="modal">
+                    <div class="modal-content">
+                      <h4>Nutrition Value</h4>
+                      <table class="centered striped">
+                        <thead>
+                          <tr>
+                            <th>Nutrition</th>
+                            <th>Value(%)</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                          <td>calcium</td>
+                          <td>229</td>
+                        </tr>
+                        <tr>
+                          <td>carbs</td>
+                          <td>66</td>
+                        </tr>
+                        <tr>
+                          <td>cholestrol</td>
+                          <td>11</td>
+                        </tr>
+                        <tr>
+                          <td>fat</td>
+                          <td>227</td>
+                        </tr>
+                        <tr>
+                          <td>iron</td>
+                          <td>118</td>
+                        </tr>
+                        <tr>
+                          <td>fiber</td>
+                          <td>121</td>
+                        </tr>
+                        <tr>
+                          <td>calcium</td>
+                          <td>229</td>
+                        </tr>
+                        <tr>
+                          <td>potassium</td>
+                          <td>69</td>
+                        </tr>
+                        <tr>
+                          <td>sodium</td>
+                          <td>174</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
+                    </div>
+                  </div> -->
+                  <button data-target="nutrition-info" class="btn modal-trigger pink"><i class= "material-icons right">menu_book</i>Nutrition info</button>
                 </div>
               </li>
               <li>
@@ -84,7 +191,7 @@
                   <img class="responsive-img" src="https://picsum.photos/640/360?random=3">
                 </div>
               </li>
-            </ul> -->
+            </ul>
             </div>
           </div>
         </div>

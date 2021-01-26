@@ -86,9 +86,9 @@ $(document).ready(function(){
           $(inglines).append(ing)
       }
       var imgDiv = $("<div></div>").attr("id","img-div")
-      var img = $("<img>").attr("src", hits[i].recipe.image).attr("alt","recipe-image").addClass("img-responsive")
+      var img = $("<img>").attr("src", hits[i].recipe.image).attr("alt","recipe-image").addClass("responsive-img")
       var saveIcon = $("<i></i>").addClass("material-icons right").text("save")
-      var saveButton = $("<button></button>").text("Save Recipe").addClass("waves-effect waves-light btn teal lighten-1").append(saveIcon)
+      var saveButton = $("<button></button>").text("Save Recipe").addClass("waves-effect waves-light btn teal lighten-1").append(saveIcon).attr("id","save"+ing_li[j])
       var nutriBtn = $("<button></button>").attr("data-target","nutrition-info").addClass("waves-effect waves-light btn modal-trigger pink").text("Nutrition-info")
       var nutriIcon = $("<i></i>").addClass("material-icons right").text("menu_book")
       $(nutriBtn).append(nutriIcon)

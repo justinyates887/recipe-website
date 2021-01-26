@@ -15,6 +15,13 @@ body{
     font-size:3rem;
     
 }
+
+
+.btn {
+    margin-top:2%;
+}
+
+
 @media (min-width: 768px) {
     #recipe-search{
         margin-left:10%

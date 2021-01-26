@@ -19,8 +19,6 @@
     </div>
   </nav>
   
-  
-
 
 <div id="main-content">
   <div class="row">
@@ -98,11 +96,13 @@
             </div>
           </div>
           
-          <!-- On button press, create <div class="card-content" id="recipe-results">, <ul class="collapsible z-depth-3"> within newly created div, and <li> within UL. Each <li> will have 3 divs and 1 button. See example below for required classes and structure. -->
+          <!-- On button press, create <div class="card-content" id="recipe-results">, <ul class="collapsible z-depth-3"> within newly created div, and <li> within UL. Each <li> will have 3 divs, 2 buttons, and 1 modal. See example below for required classes and structure. -->
 
           <div class="card-content" id="recipe-results">
             <ul class="collapsible z-depth-3">
-              <li class="active">
+
+              <li>
+
                 <div class="collapsible-header"></i>Lemon-Parmesan Chicken and Rice Bowl</div> 
                 <div class="collapsible-body center-align">
                   <a href="https://www.edamam.com/recipe/lemon-parmesan-chicken-and-rice-bowl-cf6158596a766b6b5a1c2a170d345e1e/chicken-garlic-onion-lemon-pepper-cheese-rice/alcohol-free/591-722-cal">Click for Full Recipe</a>
@@ -120,6 +120,7 @@
                     <li>1/2 cup grated Parmesan cheese</li>
                   </ul>
                   <div id="img-div"><img class="responsive-img" src="https://www.edamam.com/web-img/6fa/6fa435f3c58de8418c22251efc509a6c.jpg"></div>
+
                   <button class="waves-effect waves-light btn teal lighten-1"> <i class="material-icons right">save</i>Save Recipe</button>
                   <!-- nutrition info -->
                   <div id="nutrition-info" class="modal">
@@ -175,6 +176,8 @@
                     </div>
                   </div>
                   <button data-target="nutrition-info" class="btn modal-trigger pink"><i class= "material-icons right">menu_book</i>Nutrition info</button>
+
+
                 </div>
               </li>
               <li>
@@ -199,8 +202,6 @@
     </div>
   </div>
   
-
-
 
 </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

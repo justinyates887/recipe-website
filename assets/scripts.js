@@ -129,9 +129,9 @@ $(document).ready(function(){
     
     
     $("#search").on("click", function(e){
-          e.preventDefault()
-         ingredients = $("#ing-input").text().trim().toString().split("close").toString()
-      
+        e.preventDefault()
+        $("#recipe-results").empty()
+        ingredients = $("#ing-input").text().trim().toString().split("close").toString()
         console.log(ingredients)
         var query_url = "https://api.edamam.com/search?q="+ingredients+"&app_id=914eaa27&app_key=43cf2ff17cfeb099d1da941100537c64"
         $.ajax({url:query_url, method:"GET"}).done(function(res){

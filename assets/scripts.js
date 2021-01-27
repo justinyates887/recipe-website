@@ -1,5 +1,5 @@
 //Scripts
-
+let recipesSaved = []
 
 const tags = document.querySelectorAll(".chips");
     M.Chips.init(tags, {
@@ -73,10 +73,11 @@ console.log(storedrecipes);
   renderStoredrecipes()
   clearStorage()
 
+
   // recipes populated in collapsible card based on ingredients search
  function getRecipe(res){
    console.log(res)
-  var hits = res.hits;
+  var hits = res.hits; 
     for(i=0;i<hits.length; i++){
       var ul = $("<ul></ul>").attr("id", "recipe-list").addClass("collapsible z-depth-3")
       var li = $("<li></li>").attr("id", "recipe-name")
@@ -93,7 +94,9 @@ console.log(storedrecipes);
       var imgDiv = $("<div></div>").attr("id","img-div")
       var img = $("<img>").attr("src", hits[i].recipe.image).attr("alt","recipe-image").addClass("responsive-img")
       var saveIcon = $("<i></i>").addClass("material-icons right").text("save")
+
       var saveButton = $("<button></button>").text("Save Recipe").addClass("waves-effect waves-light btn teal lighten-1").attr("id","save"+i).append(saveIcon)
+
       var nutriBtn = $("<button></button>").attr("data-target","nutrition-info").addClass("waves-effect waves-light btn modal-trigger pink").text("Nutrition-info")
       var nutriIcon = $("<i></i>").addClass("material-icons right").text("menu_book")
       $(nutriBtn).append(nutriIcon)
@@ -280,8 +283,21 @@ console.log(storedrecipes);
       }
     }
  
-    
-    
+    $(document).on("click", "#saveBtn", function(){
+      
+      var recipe = $(this).parent().prev().text();
+      recipesSaved.push(recipe);
+      recipe.value="";
+      function storeRecipes(){
+        localStorage.setItem("recipesSaved", JSON.stringify(recipesSaved))
+      }
+
+      console.log(recipesSaved)
+      storeRecipes();
+      renderButtons();
+    })
+    renderButtons();
+
     $("#search").on("click", function(e){
         e.preventDefault()
         $("#recipe-results").empty()
@@ -292,6 +308,7 @@ console.log(storedrecipes);
         //  console.log(res)
         getNutrition(res)
         getRecipe(res)
+        renderButtons();
         
          })
       })

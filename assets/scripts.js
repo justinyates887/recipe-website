@@ -1,5 +1,5 @@
 //Scripts
-
+let recipesSaved = []
 
 const tags = document.querySelectorAll(".chips");
     M.Chips.init(tags, {
@@ -67,11 +67,33 @@ var chipsDataJson = JSON.stringify(chipsData);
 //   var ingredientEntered = instance.chipsData;
 
 $(document).ready(function(){
- 
- 
+
+const recipe = "";
+const savedList = document.querySelector("#saved-recipes");
+function init(){
+  const storedRecipes = JSON.parse(localStorage.getItem("recipesSaved"));
+  if (storedRecipes !== null) {
+    recipesSaved = storedRecipes;
+  }
+}
+ init();
+
+ function renderButtons(){
+   savedList.innerHTML = "";
+   $("#saved-recipes").empty();
+   for (var i = 0; i > recipesSaved.length; i++){
+     var recipeLi = $("<span>");
+     recipeLi.addClass("collection-item");
+     recipeLi.attr("data-name", recipesSaved[i]);
+     var buttonText = recipesSaved[i];
+     recipeLi.text(buttonText);
+     $("#saved-recipes").append(recipeLi)
+     console.log(recipeLi)
+   }
+ }
   function getRecipe(res){
    console.log(res)
-  var hits = res.hits;
+  var hits = res.hits; 
     for(i=0;i<hits.length; i++){
       var ul = $("<ul></ul>").attr("id", "recipe-list").addClass("collapsible z-depth-3")
       var li = $("<li></li>").attr("id", "recipe-name")
@@ -88,7 +110,7 @@ $(document).ready(function(){
       var imgDiv = $("<div></div>").attr("id","img-div")
       var img = $("<img>").attr("src", hits[i].recipe.image).attr("alt","recipe-image").addClass("img-responsive")
       var saveIcon = $("<i></i>").addClass("material-icons right").text("save")
-      var saveButton = $("<button></button>").text("Save Recipe").addClass("waves-effect waves-light btn teal lighten-1").append(saveIcon)
+      var saveButton = $("<button></button>").text("Save Recipe").addClass("waves-effect waves-light btn teal lighten-1").attr("id", "saveBtn").append(saveIcon)
       var nutriBtn = $("<button></button>").attr("data-target","nutrition-info").addClass("waves-effect waves-light btn modal-trigger pink").text("Nutrition-info")
       var nutriIcon = $("<i></i>").addClass("material-icons right").text("menu_book")
       $(nutriBtn).append(nutriIcon)
@@ -126,8 +148,21 @@ $(document).ready(function(){
       }
     }
  
-    
-    
+    $(document).on("click", "#saveBtn", function(){
+      
+      var recipe = $(this).parent().prev().text();
+      recipesSaved.push(recipe);
+      recipe.value="";
+      function storeRecipes(){
+        localStorage.setItem("recipesSaved", JSON.stringify(recipesSaved))
+      }
+
+      console.log(recipesSaved)
+      storeRecipes();
+      renderButtons();
+    })
+    renderButtons();
+
     $("#search").on("click", function(e){
           e.preventDefault()
          ingredients = $("#ing-input").text().trim().toString().split("close").toString()
@@ -138,6 +173,7 @@ $(document).ready(function(){
         //  console.log(res)
         getNutrition(res)
         getRecipe(res)
+        renderButtons();
         
          })
       })

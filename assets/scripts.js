@@ -65,33 +65,17 @@ var chipsDataJson = JSON.stringify(chipsData);
 //   // Puts data from chips into objects in an array
 //   var instance = M.Chips.getInstance($(".chips"));
 //   var ingredientEntered = instance.chipsData;
+var storedrecipes = JSON.parse(localStorage.getItem("recipes"))||[]
+console.log(storedrecipes);
+ $(document).ready(function(){
+   $("#delete-saved").hide()
+// getting recipes from local storage
+  renderStoredrecipes()
+  clearStorage()
 
-$(document).ready(function(){
 
-const recipe = "";
-const savedList = document.querySelector("#saved-recipes");
-function init(){
-  const storedRecipes = JSON.parse(localStorage.getItem("recipesSaved"));
-  if (storedRecipes !== null) {
-    recipesSaved = storedRecipes;
-  }
-}
- init();
-
- function renderButtons(){
-   savedList.innerHTML = "";
-   $("#saved-recipes").empty();
-   for (var i = 0; i > recipesSaved.length; i++){
-     var recipeLi = $("<span>");
-     recipeLi.addClass("collection-item");
-     recipeLi.attr("data-name", recipesSaved[i]);
-     var buttonText = recipesSaved[i];
-     recipeLi.text(buttonText);
-     $("#saved-recipes").append(recipeLi)
-     console.log(recipeLi)
-   }
- }
-  function getRecipe(res){
+  // recipes populated in collapsible card based on ingredients search
+ function getRecipe(res){
    console.log(res)
   var hits = res.hits; 
     for(i=0;i<hits.length; i++){
@@ -110,7 +94,9 @@ function init(){
       var imgDiv = $("<div></div>").attr("id","img-div")
       var img = $("<img>").attr("src", hits[i].recipe.image).attr("alt","recipe-image").addClass("responsive-img")
       var saveIcon = $("<i></i>").addClass("material-icons right").text("save")
-      var saveButton = $("<button></button>").text("Save Recipe").addClass("waves-effect waves-light btn teal lighten-1").attr("id", "saveBtn").append(saveIcon)
+
+      var saveButton = $("<button></button>").text("Save Recipe").addClass("waves-effect waves-light btn teal lighten-1").attr("id","save"+i).append(saveIcon)
+
       var nutriBtn = $("<button></button>").attr("data-target","nutrition-info").addClass("waves-effect waves-light btn modal-trigger pink").text("Nutrition-info")
       var nutriIcon = $("<i></i>").addClass("material-icons right").text("menu_book")
       $(nutriBtn).append(nutriIcon)
@@ -122,7 +108,156 @@ function init(){
       $(".collapsible").collapsible()
       $('.modal').modal();
     }
+    saveRecipe(hits)
     }
+
+    
+     
+ // function to add items to localstorage
+     function saveRecipe(hits){
+      
+   //  recipes are stored in descending order since the list items are prepended hence i value starts from 9
+      $("#save9").on("click", function(event){
+        event.preventDefault()
+        console.log("clicked")
+        var save9 ={"title": hits[9].recipe.label,"recipeLink": hits[9].recipe.url }
+        if(storedrecipes===null){
+        localStorage.setItem("recipes", JSON.stringify({"title": hits[9].recipe.label,"recipeLink": hits[9].recipe.url}))
+        }else{
+         storedrecipes.push(save9)
+         localStorage.setItem("recipes", JSON.stringify(storedrecipes))
+        }
+        
+      })
+      $("#save8").on("click", function(event){
+       event.preventDefault()
+       var save8 = {"title": hits[8].recipe.label,"recipeLink": hits[8].recipe.url}
+       if(storedrecipes === null){
+        localStorage.setItem("recipes", JSON.stringify({"title": hits[8].recipe.label,"recipeLink": hits[8].recipe.url}))
+       }else {
+       storedrecipes.push(save8)
+        localStorage.setItem("recipes", JSON.stringify(storedrecipes))
+       }
+       
+     })
+     $("#save7").on("click", function(event){
+       event.preventDefault()
+       var save7 = {"title": hits[7].recipe.label,"recipeLink": hits[7].recipe.url}
+       if(storedrecipes===null){
+       localStorage.setItem("recipes", JSON.stringify({"title": hits[7].recipe.label,"recipeLink": hits[7].recipe.url}))
+       }else{
+        storedrecipes.push(save7)
+        localStorage.setItem("recipes", JSON.stringify(storedrecipes))
+       }
+       
+     })
+     $("#save6").on("click", function(event){
+       event.preventDefault()
+       var save6 = {"title": hits[7].recipe.label,"recipeLink": hits[6].recipe.url}
+       if(storedrecipes===null){
+       localStorage.setItem("recipes", JSON.stringify({"title": hits[6].recipe.label,"recipeLink": hits[6].recipe.url}))
+       }else{
+        storedrecipes.push(save6)
+        localStorage.setItem("recipes", JSON.stringify(storedrecipes))
+       }
+     
+     })
+     $("#save5").on("click", function(event){
+       event.preventDefault()
+       var save5 = {"title": hits[5].recipe.label,"recipeLink": hits[5].recipe.url}
+       if(storedrecipes===null){
+       localStorage.setItem("recipes", JSON.stringify({"title": hits[5].recipe.label,"recipeLink": hits[5].recipe.url}))
+       }else{
+        storedrecipes.push(save5)
+        localStorage.setItem("recipes", JSON.stringify(storedrecipes))
+       }
+     
+     })
+     $("#save4").on("click", function(event){
+       event.preventDefault()
+       var save4 = {"title": hits[4].recipe.label,"recipeLink": hits[4].recipe.url}
+       if(storedrecipes===null){
+       localStorage.setItem("recipes", JSON.stringify({"title": hits[4].recipe.label,"recipeLink": hits[4].recipe.url}))
+       }else{
+        storedrecipes.push(save4)
+        localStorage.setItem("recipes", JSON.stringify(storedrecipes))
+       }
+     
+     })
+     $("#save3").on("click", function(event){
+       event.preventDefault()
+       var save3 = {"title": hits[3].recipe.label,"recipeLink": hits[3].recipe.url}
+       if(storedrecipes===null){
+       localStorage.setItem("recipes", JSON.stringify({"title": hits[3].recipe.label,"recipeLink": hits[3].recipe.url}))
+       }else{
+        storedrecipes.push(save3)
+        localStorage.setItem("recipes", JSON.stringify(storedrecipes))
+       }
+     
+     })
+     $("#save2").on("click", function(event){
+       event.preventDefault()
+       var save2 = {"title": hits[2].recipe.label,"recipeLink": hits[2].recipe.url}
+       if(storedrecipes===null){
+       localStorage.setItem("recipes", JSON.stringify({"title": hits[2].recipe.label,"recipeLink": hits[2].recipe.url}))
+       }else{
+        storedrecipes.push(save2)
+        localStorage.setItem("recipes", JSON.stringify(storedrecipes))
+       }
+     
+     })
+     $("#save1").on("click", function(event){
+       event.preventDefault()
+       var save1 = {"title": hits[1].recipe.label,"recipeLink": hits[1].recipe.url}
+       if(storedrecipes===null){
+       localStorage.setItem("recipes", JSON.stringify({"title": hits[1].recipe.label,"recipeLink": hits[1].recipe.url}))
+       }else{
+        storedrecipes.push(save1)
+        localStorage.setItem("recipes", JSON.stringify(storedrecipes))
+       }
+     
+     })
+     $("#save0").on("click", function(event){
+       event.preventDefault()
+       var save0 = {"title": hits[0].recipe.label,"recipeLink": hits[0].recipe.url}
+       if(storedrecipes==null){
+       localStorage.setItem("recipes", JSON.stringify({"title": hits[0].recipe.label,"recipeLink": hits[0].recipe.url}))
+       }else{
+        storedrecipes.push(save0)
+        localStorage.setItem("recipes", JSON.stringify(storedrecipes))
+       }
+       
+     })
+       
+   }
+   // to show stored recipes from local storage inside savedRecipes div
+   function renderStoredrecipes(){
+    
+    for(i=0; i<storedrecipes.length; i++){
+      var storedUl = $("<ul></ul>").attr("id","stored-ul").addClass("collapsible z-depth-3")
+      var storedLi = $("<li></li>").attr("id","stored-li")
+      var storedTitle= $("<div></div>").attr("id","stored-title").addClass("collapsible-header").text(storedrecipes[i].title)
+      var storedBody = $("<div></div>").addClass("collapsible-body center-align")
+      var storedLink = $("<a></a>").attr("target","_blank").attr("href",storedrecipes[i].recipeLink).text("click here for the recipe")
+      $(storedBody).append(storedLink)
+      $(storedLi).append(storedTitle,storedBody)
+      $(storedUl).append(storedLi)
+      
+      $(".collection").prepend(storedUl)
+      $(".collapsible").collapsible()
+      $("#delete-saved").show()
+    }
+   
+   }
+   function clearStorage(){
+        $("#delete-saved").on("click", function(){
+          console.log("clicked")
+          $(".collection").empty()
+          $("#delete-saved").hide()
+          localStorage.removeItem("recipes")
+          
+        })
+   }
    
    function getNutrition(res){
       var hit = res.hits
@@ -164,9 +299,9 @@ function init(){
     renderButtons();
 
     $("#search").on("click", function(e){
-          e.preventDefault()
-         ingredients = $("#ing-input").text().trim().toString().split("close").toString()
-      
+        e.preventDefault()
+        $("#recipe-results").empty()
+        ingredients = $("#ing-input").text().trim().toString().split("close").toString()
         console.log(ingredients)
         var query_url = "https://api.edamam.com/search?q="+ingredients+"&app_id=914eaa27&app_key=43cf2ff17cfeb099d1da941100537c64"
         $.ajax({url:query_url, method:"GET"}).done(function(res){

@@ -127,7 +127,7 @@ console.log(storedrecipes);
          storedrecipes.push(save9)
          localStorage.setItem("recipes", JSON.stringify(storedrecipes))
         }
-        
+        renderStoredrecipes();   
       })
       $("#save8").on("click", function(event){
        event.preventDefault()
@@ -138,7 +138,7 @@ console.log(storedrecipes);
        storedrecipes.push(save8)
         localStorage.setItem("recipes", JSON.stringify(storedrecipes))
        }
-       
+       renderStoredrecipes();   
      })
      $("#save7").on("click", function(event){
        event.preventDefault()
@@ -149,7 +149,7 @@ console.log(storedrecipes);
         storedrecipes.push(save7)
         localStorage.setItem("recipes", JSON.stringify(storedrecipes))
        }
-       
+       renderStoredrecipes();   
      })
      $("#save6").on("click", function(event){
        event.preventDefault()
@@ -160,7 +160,7 @@ console.log(storedrecipes);
         storedrecipes.push(save6)
         localStorage.setItem("recipes", JSON.stringify(storedrecipes))
        }
-     
+       renderStoredrecipes();   
      })
      $("#save5").on("click", function(event){
        event.preventDefault()
@@ -171,7 +171,7 @@ console.log(storedrecipes);
         storedrecipes.push(save5)
         localStorage.setItem("recipes", JSON.stringify(storedrecipes))
        }
-     
+       renderStoredrecipes();   
      })
      $("#save4").on("click", function(event){
        event.preventDefault()
@@ -182,7 +182,7 @@ console.log(storedrecipes);
         storedrecipes.push(save4)
         localStorage.setItem("recipes", JSON.stringify(storedrecipes))
        }
-     
+       renderStoredrecipes();   
      })
      $("#save3").on("click", function(event){
        event.preventDefault()
@@ -193,7 +193,7 @@ console.log(storedrecipes);
         storedrecipes.push(save3)
         localStorage.setItem("recipes", JSON.stringify(storedrecipes))
        }
-     
+       renderStoredrecipes();   
      })
      $("#save2").on("click", function(event){
        event.preventDefault()
@@ -204,7 +204,7 @@ console.log(storedrecipes);
         storedrecipes.push(save2)
         localStorage.setItem("recipes", JSON.stringify(storedrecipes))
        }
-     
+       renderStoredrecipes();   
      })
      $("#save1").on("click", function(event){
        event.preventDefault()
@@ -215,7 +215,7 @@ console.log(storedrecipes);
         storedrecipes.push(save1)
         localStorage.setItem("recipes", JSON.stringify(storedrecipes))
        }
-     
+       renderStoredrecipes();   
      })
      $("#save0").on("click", function(event){
        event.preventDefault()
@@ -226,13 +226,13 @@ console.log(storedrecipes);
         storedrecipes.push(save0)
         localStorage.setItem("recipes", JSON.stringify(storedrecipes))
        }
-       
+       renderStoredrecipes();   
      })
-       
+    
    }
    // to show stored recipes from local storage inside savedRecipes div
    function renderStoredrecipes(){
-    
+    $(".collection").empty();
     for(i=0; i<storedrecipes.length; i++){
       var storedUl = $("<ul></ul>").attr("id","stored-ul").addClass("collapsible z-depth-3")
       var storedLi = $("<li></li>").attr("id","stored-li")
@@ -294,9 +294,10 @@ console.log(storedrecipes);
 
       console.log(recipesSaved)
       storeRecipes();
-      renderButtons();
+      renderStoredrecipes();
+      
     })
-    renderButtons();
+    
 
     $("#search").on("click", function(e){
         e.preventDefault()
@@ -308,7 +309,7 @@ console.log(storedrecipes);
         //  console.log(res)
         getNutrition(res)
         getRecipe(res)
-        renderButtons();
+        
         
          })
       })

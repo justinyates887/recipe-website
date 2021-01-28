@@ -15,37 +15,7 @@ const tags = document.querySelectorAll(".chips");
       placeholder: "Enter ingredients"
     })
 
-    /*******************************************************Unsplash API ************************************************************************/
-    /*
-    const unsplashKey = 'IhPp4I1zglZsS5HfUmls4CF3gKJxuuBPeKVPwWEQmeo';
-    let recipe = $(``).val();
-    let queryURL = `https://api.unsplash.com/photos/?query=${recipe}&client_id=${unsplashKey}`;
-    const carousel = document.querySelector('');
-
-    async function getRecipeImages() {
-      return fetch(queryURL)
-        .then((response) => response.json())
-        .then((data) => {
-          let image1 = data.results[0];
-          return image.urls.regular;
-        })
-    }
-    */
-    /********************************************************************************************************************************************/
-
-
-    
-    /*******************************************************Bookmark API*********************************************************************/
-    /*
-    $('#bookmark').on('click', function(event) {
-      var createBookmark = browser.bookmarks.create({
-        title: "", //set title of recipie here
-        url: "" //set url to recipie here
-      });
-    });
-    */
-    /********************************************************************************************************************************************/
-M.AutoInit();
+  M.AutoInit();
 $('.chips').chips();
 
   $('.carousel.carousel-slider').carousel({
@@ -59,15 +29,11 @@ var chipsDataJson = JSON.stringify(chipsData);
 
 
   
-// $("#search").on("click", function(event) {
-//   event.preventDefault();
 
-//   // Puts data from chips into objects in an array
-//   var instance = M.Chips.getInstance($(".chips"));
-//   var ingredientEntered = instance.chipsData;
 var storedrecipes = JSON.parse(localStorage.getItem("recipes"))||[]
-console.log(storedrecipes);
- $(document).ready(function(){
+
+
+$(document).ready(function(){
    $("#delete-saved").hide()
 // getting recipes from local storage
   renderStoredrecipes()
@@ -76,7 +42,6 @@ console.log(storedrecipes);
 
   // recipes populated in collapsible card based on ingredients search
  function getRecipe(res){
-   console.log(res)
   var hits = res.hits; 
     for(i=0;i<hits.length; i++){
       var ul = $("<ul></ul>").attr("id", "recipe-list").addClass("collapsible z-depth-3")
@@ -249,16 +214,16 @@ console.log(storedrecipes);
     }
    
    }
+  //  clear savedrecipes from local storage
    function clearStorage(){
         $("#delete-saved").on("click", function(){
-          console.log("clicked")
           $(".collection").empty()
           $("#delete-saved").hide()
           localStorage.removeItem("recipes")
           
         })
    }
-   
+  //  getiing nutrition value
    function getNutrition(res){
       var hit = res.hits
       for(i=0;i<hit.length; i++){
@@ -303,7 +268,7 @@ console.log(storedrecipes);
         e.preventDefault()
         $("#recipe-results").empty()
         ingredients = $("#ing-input").text().trim().toString().split("close").toString()
-        console.log(ingredients)
+        // console.log(ingredients)
         var query_url = "https://api.edamam.com/search?q="+ingredients+"&app_id=914eaa27&app_key=43cf2ff17cfeb099d1da941100537c64"
         $.ajax({url:query_url, method:"GET"}).done(function(res){
         //  console.log(res)

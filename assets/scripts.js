@@ -95,9 +95,9 @@ console.log(storedrecipes);
       var img = $("<img>").attr("src", hits[i].recipe.image).attr("alt","recipe-image").addClass("responsive-img")
       var saveIcon = $("<i></i>").addClass("material-icons right").text("save")
 
-      var saveButton = $("<button></button>").text("Save Recipe").addClass("waves-effect waves-light btn teal lighten-1").attr("id","save"+i).append(saveIcon)
+      var saveButton = $("<button></button>").text("Save Recipe").addClass("waves-effect waves-light btn orange lighten-1").attr("id","save"+i).append(saveIcon)
 
-      var nutriBtn = $("<button></button>").attr("data-target","nutrition-info").addClass("waves-effect waves-light btn modal-trigger pink").text("Nutrition-info")
+      var nutriBtn = $("<button></button>").attr("data-target","nutrition-info").addClass("waves-effect waves-light btn modal-trigger pink").text("Nutrition info")
       var nutriIcon = $("<i></i>").addClass("material-icons right").text("menu_book")
       $(nutriBtn).append(nutriIcon)
       $(imgDiv).append(img)

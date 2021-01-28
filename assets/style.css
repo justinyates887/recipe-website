@@ -4,8 +4,8 @@
 }
 
 body{
-    background:rgb(192, 192, 192);
-    background-image: url(ingredients1.jpg);
+    background:rgb(112, 112, 112);
+    background-image: url(cocina.gif);
     background-blend-mode: screen;
     
 }
@@ -13,12 +13,14 @@ body{
 
 #nav-wrapper{
     height:auto;
+    
 }
 #header {
     font-family: 'Roboto Condensed';
-    font-size:3rem;
+    font-size:2.5rem;
     
 }
+
 
 
 .btn {

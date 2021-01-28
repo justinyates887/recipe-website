@@ -5,6 +5,8 @@
 ![open](https://img.shields.io/github/issues-raw/justinyates887/recipe-website)
 ![closed](https://img.shields.io/github/issues-closed-raw/justinyates887/recipe-website)
 
+### user Story
+
 **IDEA:** Recipe generator based on available ingredients
 
 **WHEN:** I am a hungry person wanting a meal
@@ -31,6 +33,18 @@
 
 ### Description:
 
-A responsive website utilizing [Materialize](https://materializecss.com/) framework and API's from [Foodish](https://foodish-api.herokuapp.com/) and [Recipe Puppy](http://www.recipepuppy.com/about/api/). 
+A responsive website utilizing [Materialize](https://materializecss.com/) framework and API's from [Edamam](https://developer.edamam.com/edamam-docs-recipe-api)
 
-The goal is to provide a website where a user can input the ingredients they have on hand and will be given a list of recipes they can make as well as images of said recipe underneath.
+The goal is to provide a website where a user can input the ingredients they have on hand and will be given a list of recipes they can make as well as images,recipelink and the list of ingredients of said recipe underneath.Each recipe also shows the nutrition value of the recipe. The user also has an option to save the recipe link where the recipe title and recipe links are stored in local storage and the result is persistent all the time unless the user clears it. The styling of the website is done using materialize css and it is responsive across all width ports.
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+## Mockup
+![landing-page](assets/landing-page.PNG)
+![searchrecipe](assets/searchrecipe.PNG)
+![recipe-list](assets/recipe-list.PNG)
+![nutrition-info](assets/nutrition-info.PNG)
+![save-recipeButton](assets/save-recbtn.PNG)
+![saved-list](assets/saved-list.PNG)
+
+## Github pages

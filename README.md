@@ -48,3 +48,4 @@ The goal is to provide a website where a user can input the ingredients they hav
 ![saved-list](assets/saved-list.PNG)
 
 ## Github pages
+[Deployed Project](https://cgouge93.github.io/recipe-website/)
